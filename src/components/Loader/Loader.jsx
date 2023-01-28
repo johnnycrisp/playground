@@ -19,7 +19,7 @@ const Loader = () => {
       zIndex: -1,
     });
     load.to(progress, {
-      duration: 0.8,
+      duration: 0.6,
       width: "0%",
     });
     load.to(loader, {
