@@ -1,12 +1,14 @@
-import React from "react";
-import Layout from "../components/Layout";
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/main.scss";
+import Layout from "../components/Layout";
 
 const Projects = () => {
   return (
     <Layout>
-      <div className="projects__content">
-        <h1>PROJECTS</h1>
+      <div className="projects__wrapper">
+        <h1>hi</h1>
       </div>
     </Layout>
   );
