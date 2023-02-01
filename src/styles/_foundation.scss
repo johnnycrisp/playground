@@ -2,3 +2,13 @@
   background-color: #e9dbd4;
   padding: 2rem;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &:visited {
+    text-decoration: none;
+    color: black;
+  }
+}

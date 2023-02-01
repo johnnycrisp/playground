@@ -17,7 +17,7 @@ const Nav = () => {
             <Link to="/scroller">Scroller</Link>
           </li>
           <li>
-            <Link to="/">Link</Link>
+            <Link to="/parallax">Parallax</Link>
           </li>
         </div>
       </ul>
