@@ -12,3 +12,17 @@ a {
     color: black;
   }
 }
+
+button {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 10%;
+  padding: 0.5rem;
+  border: 1px solid black;
+  cursor: pointer;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}

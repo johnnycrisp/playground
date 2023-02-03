@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import Layout from "../components/Layout";
-import snoopy from "../images/icon.png";
+import River from "../images/river.png";
+import Snoopy from "../images/icon.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionVertical from "../components/SectionVertical/SectionVertical";
@@ -23,8 +24,7 @@ const Parallax = () => {
       ease: "none",
       scrollTrigger: {
         trigger: ".parallax",
-        start: "top bottom",
-        end: "center top",
+        start: "top bottom-=200px",
         scrub: true,
         markers: true,
       },
@@ -42,7 +42,7 @@ const Parallax = () => {
       .from(
         ".bcg__parallax",
         {
-          y: "-40%",
+          y: "-50%",
           duration: 2,
         },
         0
@@ -53,7 +53,7 @@ const Parallax = () => {
     <Layout>
       <section>
         <h1>Hello</h1>
-        <img src={snoopy} alt="icon" />
+        <img src={Snoopy} alt="icon" />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dicta,
           voluptatem, eligendi, ducimus odit nihil ea quia enim quas veniam quis
@@ -63,13 +63,10 @@ const Parallax = () => {
       <div className="parallax">
         <div
           className="bcg__parallax"
-          style={{ background: `url(${snoopy})` }}
+          style={{ background: `url(${River})` }}
         ></div>
         <div className="parallax__content">
-          <h2>HELLO AGAIN</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dicta.
-          </p>
+          <h3>HELLO AGAIN</h3>
         </div>
       </div>
       <section>
