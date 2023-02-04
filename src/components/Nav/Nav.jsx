@@ -14,7 +14,7 @@ const Nav = () => {
             <Link to="/projects">Projects</Link>
           </li>
           <li>
-            <Link to="/scroller">Scroller</Link>
+            <Link to="/scroller">Pin</Link>
           </li>
           <li>
             <Link to="/parallax">Parallax</Link>
