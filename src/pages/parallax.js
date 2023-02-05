@@ -4,10 +4,46 @@ import River from "../images/river.png";
 import Snoopy from "../images/icon.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SectionVertical from "../components/SectionVertical/SectionVertical";
+import styled from "styled-components";
 
 const Parallax = () => {
   gsap.registerPlugin(ScrollTrigger);
+
+  const ParallaxStyles = styled.section`
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .bcg__parallax {
+      opacity: 0.5;
+      background-size: cover;
+      position: absolute;
+      width: 100%;
+      height: 200%;
+      z-index: 1;
+      top: 0;
+      opacity: 0.7;
+    }
+
+    .parallax__content {
+      z-index: 2;
+      position: relative;
+      width: 90%;
+      text-align: center;
+      opacity: 1;
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 2rem;
+      }
+    }
+  `;
 
   useLayoutEffect(() => {
     // gsap.to("section img", {
@@ -60,7 +96,7 @@ const Parallax = () => {
           fuga consequuntur iure hic amet? Quidem quae mollitia officia.
         </p>
       </section>
-      <div className="parallax">
+      <ParallaxStyles className="parallax">
         <div
           className="bcg__parallax"
           style={{ background: `url(${River})` }}
@@ -68,7 +104,7 @@ const Parallax = () => {
         <div className="parallax__content">
           <h3>HELLO AGAIN</h3>
         </div>
-      </div>
+      </ParallaxStyles>
       <section>
         <div>Fin</div>
       </section>

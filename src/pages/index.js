@@ -1,41 +1,72 @@
 import React from "react";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Layout from "../components/Layout";
 import "../styles/main.scss";
 import gsap from "gsap";
 import snoopy from "../images/icon.png";
+import styled from "styled-components";
 
 const IndexPage = () => {
   const [again, setAgain] = useState(false);
   const timeline = gsap.timeline({ ease: "power2.out" });
+  const homeRef = useRef(null);
+  const HomeWrapper = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
 
-  useLayoutEffect(() => {
-    timeline
-      .from(
-        "section h1",
-        {
-          xPercent: -100,
-          opacity: 0,
-          duration: 1.2,
-        },
-        "-0.5"
-      )
-      .from(
-        "section ul li",
-        {
-          duration: 0.6,
-          x: -40,
-          opacity: 0,
-          stagger: 0.2,
-        },
-        "-=0.3"
-      );
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    button {
+      width: fit-content;
+      background-color: none;
+      cursor: pointer;
+    }
+  `;
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      timeline
+        .fromTo(
+          "h1",
+          {
+            xPercent: -100,
+            autoAlpha: 0,
+          },
+          {
+            duration: 1.2,
+            xPercent: 0,
+            autoAlpha: 1,
+          }
+        )
+        .fromTo(
+          "section ul li",
+          {
+            x: -40,
+            autoAlpha: 0,
+          },
+          { stagger: 0.2, duration: 0.6, x: 0, autoAlpha: 1 }
+        );
+    }, homeRef);
+    return () => ctx.revert;
   }, [again]);
 
   return (
     <Layout>
       {/* <Loader /> */}
-      <div className="home__content">
+      <HomeWrapper ref={homeRef} className="home__content">
         <section className="hero">
           <h1>PLAYGROUND</h1>
           <ul>
@@ -48,21 +79,7 @@ const IndexPage = () => {
           </ul>
           <button onClick={() => setAgain((again) => !again)}>Again</button>
         </section>
-        <section className="second__section">
-          <h2>ANOTHER SECTION</h2>
-          <div>
-            <img src={snoopy} alt="icon" />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              obcaecati inventore illo quod quaerat perspiciatis, saepe,
-              consectetur non nostrum, impedit ipsam commodi harum. Est optio
-              iure cupiditate magni harum recusandae omnis ea quo quam tenetur
-              ad molestias dolorem laborum accusantium assumenda totam, at
-              nesciunt corporis? Ipsam quos numquam praesentium atque.
-            </p>
-          </div>
-        </section>
-      </div>
+      </HomeWrapper>
     </Layout>
   );
 };

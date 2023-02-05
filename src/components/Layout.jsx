@@ -5,11 +5,13 @@ import Nav from "./Nav/Nav";
 
 const Layout = ({ children }) => {
   return (
-    <div className="site__wrapper">
+    <>
       <Nav />
-      <main>{children}</main>
-      <Footer />
-    </div>
+      <div className="site__wrapper">
+        <main>{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
