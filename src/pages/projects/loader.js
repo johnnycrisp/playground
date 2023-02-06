@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../components/Loader";
 import styled from "styled-components";
 
 const LoaderPage = () => {

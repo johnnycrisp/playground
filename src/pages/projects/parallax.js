@@ -17,7 +17,7 @@ const Parallax = () => {
     align-items: center;
     justify-content: center;
 
-    .hero__wrapper {
+    .hero__content {
       max-width: 40%;
       display: flex;
       flex-direction: column;
@@ -37,76 +37,70 @@ const Parallax = () => {
   `;
 
   const ParallaxStyles = styled.section`
-    position: relative;
-    overflow: hidden;
-    width: 50%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .bcg__parallax {
-      opacity: 0.5;
-      background-size: cover;
-      position: absolute;
-      width: 100%;
-      height: 200%;
-      z-index: 1;
-      top: 0;
-      opacity: 0.7;
-    }
-
-    .parallax__content {
-      z-index: 2;
+    .parallax {
       position: relative;
-      width: 90%;
-      text-align: center;
-      opacity: 1;
+      overflow: hidden;
 
-      h2 {
-        font-size: 3rem;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .bcg__parallax {
+        opacity: 0.5;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 150%;
+        z-index: 1;
+        top: 0;
+        opacity: 0.7;
       }
 
-      p {
-        font-size: 2rem;
+      .parallax__content {
+        z-index: 2;
+        position: relative;
+        width: 90%;
+        text-align: center;
+        opacity: 1;
+
+        h2 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 2rem;
+        }
       }
     }
   `;
 
   useLayoutEffect(() => {
-    // gsap.to("section img", {
-    //   rotate: 90,
-    //   scrollTrigger: {
-    //     start: "top top",
-    //     end: "+=50%",
-    //     scrub: true,
-    //     markers: true,
-    //   },
-    // });
-
     let ctx = gsap.context(() => {
       const parallaxTl = gsap.timeline({
         ease: "none",
         scrollTrigger: {
           trigger: ".parallax",
-          start: "top bottom-=200px",
-          scrub: true,
+          start: "top bottom-=200",
+          markers: true,
+          toggleActions: "play none none reverse",
         },
       });
 
       parallaxTl
+        .addLabel("TIMELINE")
         .from(
           ".parallax__content",
           {
-            duration: 0.5,
+            duration: 1,
             autoAlpha: 0,
           },
-          0.5
+          0.6
         )
         .from(
           ".bcg__parallax",
           {
-            y: "-50%",
+            y: "-40%",
             duration: 2,
           },
           0
@@ -117,8 +111,8 @@ const Parallax = () => {
 
   return (
     <Layout>
-      <SectionStyles className="hero">
-        <div className="hero__wrapper">
+      <SectionStyles>
+        <div className="hero__content">
           <h1>SCROLL FOR PARALLAX</h1>
           <img src={Snoopy} alt="icon" />
           <p>
@@ -128,13 +122,15 @@ const Parallax = () => {
           </p>
         </div>
       </SectionStyles>
-      <ParallaxStyles ref={parallaxRef} className="parallax">
-        <div
-          className="bcg__parallax"
-          style={{ background: `url(${River})` }}
-        ></div>
-        <div className="parallax__content">
-          <h3>HELLO AGAIN</h3>
+      <ParallaxStyles ref={parallaxRef}>
+        <div className="parallax">
+          <div
+            className="bcg__parallax"
+            style={{ background: `url(${River})` }}
+          ></div>
+          <div className="parallax__content">
+            <h3>HELLO AGAIN</h3>
+          </div>
         </div>
       </ParallaxStyles>
       <SectionStyles>

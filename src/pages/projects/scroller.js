@@ -3,8 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../../styles/main.scss";
 import Layout from "../../components/Layout";
-import SectionVertical from "../../components/SectionVertical/SectionVertical";
-import SectionHorizontal from "../../components/SectionHorizontal/SectionHorizontal";
+import SectionVertical from "../../components/SectionVertical";
+import SectionHorizontal from "../../components/SectionHorizontal";
 import styled from "styled-components";
 
 const Scroller = () => {

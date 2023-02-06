@@ -1,9 +1,29 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 const DataFetcher = () => {
   const [users, setUsers] = useState([]);
+  const [newUsers, setNewUsers] = useState(false);
   const url = "https://jsonplaceholder.typicode.com/users";
+
+  //TO DO - make getNextUser function to pass variable into header aka users/1, users/2 etc. Link to Get Next User button.
+
+  //TO DO - GSAP slider intro for content.
+
+  const FetcherWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  `;
 
   useEffect(() => {
     axios
@@ -15,10 +35,10 @@ const DataFetcher = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [newUsers]);
 
   return (
-    <div>
+    <FetcherWrapper>
       <ul>
         {users.map((user) => {
           return (
@@ -28,8 +48,10 @@ const DataFetcher = () => {
           );
         })}
       </ul>
-      <button>Get New Users</button>
-    </div>
+      <button onClick={() => setNewUsers((newUsers) => !newUsers)}>
+        Get New Users
+      </button>
+    </FetcherWrapper>
   );
 };
 

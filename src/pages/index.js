@@ -14,14 +14,14 @@ const IndexPage = () => {
     grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 4rem;
+    height: calc(100vh - 160px);
 
-    section {
+    section.hero {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 2rem;
-      height: 100vh;
     }
 
     h1 {
@@ -65,7 +65,7 @@ const IndexPage = () => {
   return (
     <Layout>
       {/* <Loader /> */}
-      <HomeWrapper ref={homeRef} className="home__content">
+      <HomeWrapper ref={homeRef}>
         <section className="hero">
           <h1>PLAYGROUND</h1>
           <ul>

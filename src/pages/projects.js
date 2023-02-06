@@ -32,6 +32,7 @@ const Projects = () => {
       display: grid;
       gap: 3rem;
       grid-template-columns: repeat(3, 1fr);
+      padding: 2rem;
     }
   `;
 
