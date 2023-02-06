@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "./_loader.scss";
 
-const Loader = () => {
+const Loader = ({ again }) => {
   const load = gsap.timeline({
     paused: "true",
   });
@@ -28,7 +28,7 @@ const Loader = () => {
     });
 
     loading();
-  }, []);
+  }, [again]);
 
   let id;
   let width1 = 1;

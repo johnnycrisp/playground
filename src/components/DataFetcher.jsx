@@ -28,6 +28,7 @@ const DataFetcher = () => {
           );
         })}
       </ul>
+      <button>Get New Users</button>
     </div>
   );
 };

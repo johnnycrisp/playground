@@ -4,8 +4,9 @@ import snoopy from "../images/icon.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
-const Project = () => {
+const Project = ({ slug, title, text }) => {
   const ProjectStyles = styled.article`
     width: 100%;
     display: flex;
@@ -23,6 +24,20 @@ const Project = () => {
       img {
         border-radius: 50%;
         height: 300px;
+      }
+
+      a {
+        background: transparent;
+        box-shadow: none;
+        border-radius: 10%;
+        padding: 0.5rem;
+        border: 1px solid black;
+        cursor: pointer;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
       }
     }
   `;
@@ -51,13 +66,15 @@ const Project = () => {
       <ProjectStyles ref={projectRef}>
         <div className="content__wrapper">
           <img src={snoopy} alt="icon" />
-          <h3>PROJECT TITLE</h3>
+          <h3>{title ? title : "PROJECT TITLE"}</h3>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            {text
+              ? text
+              : `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Repudiandae doloribus pariatur labore alias dolorem magnam quae
-            consequuntur incidunt magni exercitationem!
+            consequuntur incidunt magni exercitationem!`}
           </p>
-          <button>CLICK ME</button>
+          <Link to={`/projects/${slug}`}>LET'S GO</Link>
         </div>
       </ProjectStyles>
     </>

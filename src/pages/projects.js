@@ -95,10 +95,10 @@ const Projects = () => {
           PROJECTS
         </h2>
         <div className="wrapper">
-          <Project />
-          <Project />
-          <Project />
-          <Project />
+          <Project slug="parallax" title="PARALLAX EFFECT" />
+          <Project slug="scroller" title="HORIZONTAL SCROLLER" />
+          <Project slug="loader" title="PAGE LOADER" />
+          <Project slug="fetcher" title="DATA FETCHER" />
           <Project />
           <Project />
           <Project />

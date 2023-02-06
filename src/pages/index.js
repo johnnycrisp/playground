@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import Layout from "../components/Layout";
 import "../styles/main.scss";
 import gsap from "gsap";
-import snoopy from "../images/icon.png";
 import styled from "styled-components";
 
 const IndexPage = () => {
