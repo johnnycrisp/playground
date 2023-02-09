@@ -69,11 +69,9 @@ const IndexPage = () => {
         <section className="hero">
           <h1>PLAYGROUND</h1>
           <ul>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <li>This</li>
+            <li>Is</li>
+            <li>A</li>
             <li>Test</li>
           </ul>
           <button onClick={() => setAgain((again) => !again)}>Again</button>
