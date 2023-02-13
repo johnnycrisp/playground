@@ -100,7 +100,7 @@ const Projects = () => {
           <Project slug="scroller" title="HORIZONTAL SCROLLER" />
           <Project slug="loader" title="PAGE LOADER" />
           <Project slug="fetcher" title="DATA FETCHER" />
-          <Project />
+          <Project slug="grid" title="GRID" />
           <Project />
           <Project />
           <Project />

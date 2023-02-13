@@ -74,7 +74,7 @@ const Project = ({ slug, title, text }) => {
             Repudiandae doloribus pariatur labore alias dolorem magnam quae
             consequuntur incidunt magni exercitationem!`}
           </p>
-          <Link to={`/projects/${slug}`}>LET'S GO</Link>
+          <Link to={slug ? `/projects/${slug}` : "/"}>LET'S GO</Link>
         </div>
       </ProjectStyles>
     </>

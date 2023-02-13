@@ -73,7 +73,6 @@ const IndexPage = () => {
             <li>Is</li>
             <li>A</li>
             <li>Test</li>
-            <li>Again</li>
           </ul>
           <button onClick={() => setAgain((again) => !again)}>Again</button>
         </section>
